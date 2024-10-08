@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cloud_apis",
+  "info": {
+    "singularName": "cloud-api",
+    "pluralName": "cloud-apis",
+    "displayName": "Cloud API"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "endpoint": {
+      "type": "string",
+      "required": true
+    },
+    "method": {
+      "type": "enumeration",
+      "enum": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "required": true
+    },
+    "parameters": {
+      "type": "json"
+    },
+    "cloudPlatform": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cloud-platform.cloud-platform",
+      "inversedBy": "apis"
+    }
+  }
+}

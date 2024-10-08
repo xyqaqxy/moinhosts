@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cloud_platforms",
+  "info": {
+    "singularName": "cloud-platform",
+    "pluralName": "cloud-platforms",
+    "displayName": "Cloud Platform"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "apiEndpoint": {
+      "type": "string",
+      "required": true
+    },
+    "apiKey": {
+      "type": "password",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "active",
+        "inactive"
+      ],
+      "default": "inactive",
+      "required": true
+    }
+  }
+}
